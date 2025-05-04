@@ -2,8 +2,8 @@ BLUE="\033[0;34m"
 RED="\033[0;31m"
 RESET="\033[0m"
 
-echo -e "${BLUE} ##  REVERSE SHELL EXEC  ##
- ## Author : @mekihunter ##${RESET}"
+echo -e "${BLUE} ##  REVERSE SHELL EXEC  ##"
+echo -e " ## Author : @mekihunter ##${RESET}"
 
 if [ -z "$API" ]; then
   # echo -e "${RED}Gagal: API tidak boleh kosong!${RESET}"
